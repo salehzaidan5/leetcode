@@ -23,5 +23,9 @@ func TestExample(t *testing.T) {
 			ans := twoSum(tt.nums, tt.target)
 			assert.Equal(t, tt.want, ans)
 		})
+		t.Run(testname, func(t *testing.T) {
+			ans := twoSumHashMap(tt.nums, tt.target)
+			assert.Equal(t, tt.want, ans)
+		})
 	}
 }
