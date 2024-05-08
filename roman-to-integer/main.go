@@ -12,22 +12,19 @@ func romanToInt(s string) int {
 	}
 
 	v := 0
-	i := 0
-	for i < len(s)-1 {
+	for i := 0; i < len(s); i++ {
 		current := romanValues[s[i]]
+		if i >= len(s)-1 {
+			v += current
+			continue
+		}
+
 		next := romanValues[s[i+1]]
 		if current < next {
-			v += next - current
-			i++
+			v -= current
 		} else {
 			v += current
 		}
-		i++
 	}
-
-	if i == len(s)-1 {
-		v += romanValues[s[len(s)-1]]
-	}
-
 	return v
 }
