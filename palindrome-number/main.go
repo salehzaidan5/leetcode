@@ -19,3 +19,19 @@ func isPalindromeString(x int) bool {
 
 	return true
 }
+
+func isPalindromeReverse(x int) bool {
+	if x < 0 {
+		return false
+	}
+
+	xCopy := x
+	xReverse := 0
+	for xCopy != 0 {
+		n := xCopy % 10
+		xReverse = 10*xReverse + n
+		xCopy /= 10
+	}
+
+	return xReverse == x
+}

@@ -23,5 +23,9 @@ func TestExample(t *testing.T) {
 			ans := isPalindromeString(tt.x)
 			assert.Equal(t, tt.want, ans)
 		})
+		t.Run(testname, func(t *testing.T) {
+			ans := isPalindromeReverse(tt.x)
+			assert.Equal(t, tt.want, ans)
+		})
 	}
 }
