@@ -1,6 +1,6 @@
 package main
 
-func twoSum(nums []int, target int) []int {
+func twoSumQuadratic(nums []int, target int) []int {
 	for i := 0; i < len(nums); i++ {
 		for j := i + 1; j < len(nums); j++ {
 			if nums[i]+nums[j] == target {
@@ -12,7 +12,7 @@ func twoSum(nums []int, target int) []int {
 	panic("unreachable")
 }
 
-func twoSumHashMap(nums []int, target int) []int {
+func twoSumLinear(nums []int, target int) []int {
 	// Hash map to store the indices of each number in nums.
 	indices := make(map[int]int)
 	for i, num := range nums {
