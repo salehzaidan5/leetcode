@@ -1,6 +1,10 @@
 package main
 
 func longestCommonPrefix(strs []string) string {
+	if len(strs) == 0 {
+		return ""
+	}
+
 	lcp := strs[0]
 	for _, s := range strs[1:] {
 		for j := 0; j < min(len(lcp), len(s)); j++ {
