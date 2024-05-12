@@ -28,3 +28,14 @@ func TestAdd(t *testing.T) {
 		})
 	}
 }
+
+func TestAddSimple(t *testing.T) {
+	for _, tt := range tests {
+		testname := fmt.Sprintf("%v,%d", tt.nums, tt.val)
+		t.Run(testname, func(t *testing.T) {
+			ans := removeElementSimple(tt.nums, tt.val)
+			assert.Equal(t, len(tt.want), ans)
+			assert.ElementsMatch(t, tt.want, tt.nums[:ans])
+		})
+	}
+}
